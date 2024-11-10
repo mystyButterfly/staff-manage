@@ -1,8 +1,8 @@
-# People Management App
+# Staff Manage App
 
 ## Frontend Overview
 
-Welcome to the People Management App! This application is built with React and offers a user-friendly interface for managing a comprehensive list of individuals. Users can seamlessly view, search, sort, edit, create, and delete records, making it an essential tool for developing CRUD (Create, Read, Update, Delete) applications. The project exemplifies key React features and best practices, serving as an excellent learning opportunity for web developers.
+Welcome to the Staff Manage App! This application is built with React and offers a user-friendly interface for managing a comprehensive list of individuals. Users can seamlessly view, search, sort, edit, create, and delete records, making it an essential tool for developing CRUD (Create, Read, Update, Delete) applications. The project exemplifies key React features and best practices, serving as an excellent learning opportunity for web developers.
 
 ### Features
 
