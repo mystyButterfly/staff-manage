@@ -4,6 +4,12 @@
 
 Welcome to the Staff Manage App! This application is built with React and offers a user-friendly interface for managing a comprehensive list of individuals. Users can seamlessly view, search, sort, edit, create, and delete records, making it an essential tool for developing CRUD (Create, Read, Update, Delete) applications. The project exemplifies key React features and best practices, serving as an excellent learning opportunity for web developers.
 
+### To run this locally make next steps:
+1) download and open in your editor(VS-code ets)
+2) make available mySQL database, I use here local Apache-server with mySQL database. Create dataset using SQL-queries from file "createDB.md"
+3) open in your editor terminal folder "backend" use ```cd backend```. Install dependiense ```npm install```. To run this i use Node.js. To run this ```node server.js```
+4) open NEW terminal. Open folder "frontend" use ```cd frontend```. Install dependiense ```npm install```.To run this ```npm run dev```. Open link from your terminal in your brouser
+   
 ### Features
 
 - **Dynamic Data Fetching:** Retrieve and display data from a RESTful server using the Fetch API, showcasing the integration of front-end applications with back-end services.
