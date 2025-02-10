@@ -1,0 +1,11 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+footer{
+  display: grid;
+  place-items: center;
+  height: 30px;
+  background-color: rgb(225, 223, 255);
+}

@@ -1,0 +1,336 @@
+.dashboard {
+  min-height: calc(100vh - 80px);
+  display: flex;
+}
+.sidebar {
+  flex-shrink: 0;
+  border-right: 2px solid black;
+  width: 15%;
+}
+.sidebar h4 {
+  text-align: center;
+  padding: 3px;
+}
+.sidebar ul {
+  padding: 0;
+  text-align: center;
+}
+.sidebar li {
+  width: 100%;
+  padding: 5px;
+  background-color: #d2d4ff;
+  list-style-type: none;
+}
+.sidebar li:hover {
+  background-color: #e6eff9;
+  cursor: pointer;
+}
+.sidebar li:active {
+  color: rgb(255, 255, 255);
+}
+.sidebar a {
+  color: black;
+  text-decoration: none;
+}
+.activeNavlink li {
+  background-color: rgb(157, 165, 255) !important;
+}
+
+.search-table {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.search {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: min-content;
+  padding: 5px 0px;
+}
+.search input {
+  border: 2px solid rgb(191, 201, 255);
+  padding: 5px 10px;
+  border-radius: 3px;
+  transition: 0.1s ease;
+}
+.search input:focus-visible {
+  outline: 2px solid rgb(118, 138, 247);
+}
+.search div {
+  display: flex;
+  align-items: center;
+}
+.search svg {
+  width: 20px;
+  height: 20px;
+  margin-left: 10px;
+  transition: transform 0.5s ease-in;
+}
+.search a:hover {
+  color: rgb(99, 99, 99);
+}
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.search svg:hover {
+  animation: rotate 1s linear infinite;
+  cursor: pointer;
+}
+.search svg:active {
+  color: grey;
+}
+.search a {
+  text-decoration: none;
+  color: black;
+}
+.table {
+  margin-inline: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+/* table style */
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #ffffff;
+  margin-bottom: 10px;
+}
+
+th,
+td {
+  border: 1px solid #cccccc;
+  padding: 10px;
+  text-align: left;
+}
+
+th {
+  background-color: #f0f0f0;
+  color: #333333;
+  font-weight: bold;
+}
+
+tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+tr:hover {
+  background-color: #e0e0e0;
+}
+
+button {
+  background-color: #007bff;
+  border: 1px solid #007bff;
+  color: white;
+  padding: 8px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 4px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+button:hover {
+  background-color: #0056b3;
+  border-color: #0056b3;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.347);
+}
+.disabled {
+  background-color: #637d9a;
+  border-color: #6387ad;
+}
+table span:hover {
+  cursor: pointer;
+  color: #6f6f6f;
+}
+
+/* Modal style */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  position: relative;
+  max-width: 500px;
+  width: 100%;
+}
+
+.edit-input{
+  margin-left: 5px;
+}
+.number-input{
+  width: 3rem;
+}
+.hide-input{
+  display: none;
+}
+.buttons-modify{
+  display: flex;
+  justify-content: center;
+  padding: 10px 0;
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgb(247, 127, 127);
+  border: none;
+  cursor: pointer;
+  padding: 4px 8px;
+}
+.close-button:hover {
+  background: rgb(249, 106, 106);
+  color: black;
+}
+
+.delete-button {
+  background: rgb(255, 141, 141);
+  color: red;
+  border: none;
+}
+.delete-button:hover {
+  background: rgb(254, 116, 116);
+  color: rgb(168, 0, 0);
+}
+.delete-button-red {
+  background: rgb(255, 0, 0);
+  color: rgb(255, 255, 255);
+  border: none;
+  font-weight: 700;
+}
+.delete-button-red:hover {
+  background: rgb(248, 73, 73);
+  color: rgb(255, 255, 255);
+  border: none;
+  font-weight: 700;
+}
+.disable {
+  background: rgb(139, 47, 47);
+  color: rgb(255, 255, 255);
+  border: none;
+}
+.disable:hover {
+  background: rgb(139, 47, 47);
+  color: rgb(255, 255, 255);
+  border: none;
+}
+.report-container {
+  margin-top: 20px;
+  width: 80%;
+  margin-inline: auto;
+}
+.report-container h2 {
+  text-align: center;
+}
+/* create record */
+.create-record label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 70%;
+  margin-inline: auto;
+}
+.create-record div{
+  padding-top: 7px;
+}
+.create-record h2{
+  padding-bottom: 10px;
+}
+.createModal-buttons {
+  text-align: center;
+  margin-top: 7px;
+}
+.create-record input {
+  padding: 3px 7px;
+  margin: 2px;
+  border-radius: 2px;
+  border: 1px solid rgb(64, 62, 75);
+}
+.cancel-btn{
+  background-color: rgb(151, 151, 159);
+  border: gray;
+}
+.cancel-btn:hover{
+  background-color: rgb(163, 163, 165);
+  color: black;
+}
+.errorMessege{
+  color: rgb(203, 8, 8);
+}
+.error-input{
+  outline: 2px solid rgba(246, 86, 86, 0.644);
+}
+/* dropdown Styling */
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  max-height: 60vh;
+  overflow-y: auto;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+.dropdown-content input {
+  transform: scale(0.8);
+  margin-right: 3px;
+}
+.dropdown-content label {
+  padding: 3px;
+  cursor: pointer;
+  display: block;
+  font-weight: 500;
+  font-size: 0.9rem;
+  border-bottom: 1px solid #6f6f6f33;
+  
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  white-space: nowrap;
+
+}
+.dropdown-content label:hover {
+  background-color: #f1f1f1;
+}
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+.dropbtn{
+  background-color: transparent;
+  border: unset;
+  color: black;
+  padding: 5px;
+}
+.dropbtn:hover{
+  background-color: transparent;
+  color: black;
+}
+.btnDetail{
+  text-align: center;
+}
