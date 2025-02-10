@@ -1,9 +1,6 @@
 # Staff Manage App
-To try all features, run this locally or watch the video in the ```video``` folder. Sorry, I couldn't find a free MySQL database that I can use with the Node.js server
-<video width="600" controls>
-  <source src="https://raw.githubusercontent.com/mystyButterfly/staff-manage/main/video/staffVideo.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
+To try all features, run this locally or watch the video in the ```video``` folder. Sorry, I couldn't find a free MySQL database that I can use with the Node.js server.
+
 ## Frontend Overview
 
 Welcome to the Staff Manage App! This application is built with React and offers a user-friendly interface for managing a comprehensive list of individuals. Users can seamlessly view, search, sort, edit, create, and delete records, making it an essential tool for developing CRUD (Create, Read, Update, Delete) applications. The project exemplifies key React features and best practices, serving as an excellent learning opportunity for web developers.
