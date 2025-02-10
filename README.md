@@ -1,14 +1,15 @@
 # Staff Manage App
+To try all features, run this locally or watch the video in the ```video``` folder. Sorry, I couldn't find a free MySQL database that I can use with the Node.js server
 
 ## Frontend Overview
 
 Welcome to the Staff Manage App! This application is built with React and offers a user-friendly interface for managing a comprehensive list of individuals. Users can seamlessly view, search, sort, edit, create, and delete records, making it an essential tool for developing CRUD (Create, Read, Update, Delete) applications. The project exemplifies key React features and best practices, serving as an excellent learning opportunity for web developers.
 
-### To run this locally make next steps:
-1) download and open in your editor(VS-code ets)
-2) make available mySQL database, I use here local Apache-server with mySQL database. Create dataset using SQL-queries from file "createDB.md"
-3) open in your editor terminal folder "backend" use ```cd backend```. Install dependiense ```npm install```. To run this i use Node.js. To run this ```node server.js```
-4) open NEW terminal. Open folder "frontend" use ```cd frontend```. Install dependiense ```npm install```.To run this ```npm run dev```. Open link from your terminal in your brouser
+### To run this locally, make the next steps:
+1) download and open in your editor (VS-code ets.)
+2) make available MySQL database; I use a local Apache server with a MySQL database. Create the dataset using SQL queries from the file "createDB.md"
+3) open the terminal in your editor, navigate to the "backend" folder using ```cd backend```. Install dependencies with ```npm install```. To run this I use Node.js. To run this ```node server.js```
+4) open a NEW terminal. Navigate to the "frontend" folder using ```cd frontend```. Install dependencies with ```npm install```. To run this use ```npm run dev```. Open the link from your terminal in your browser.
    
 ### Features
 
