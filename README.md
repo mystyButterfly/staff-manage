@@ -1,5 +1,6 @@
 # Staff Manage App
 To try all features, run this locally or watch the video in the ```video``` folder. Sorry, I couldn't find a free MySQL database that I can use with the Node.js server.
+![staffVideo](https://github.com/user-attachments/assets/d371740f-39a8-470f-aa07-bc71809a7f68)
 
 ## Frontend Overview
 
