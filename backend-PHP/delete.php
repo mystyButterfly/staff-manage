@@ -30,15 +30,18 @@ if ($conn->connect_error) {
 $data = json_decode(file_get_contents('php://input'), true);
 $id = $data['id'] ?? null; // Get the ID to delete
 
-if ($id === null) {
-    echo json_encode(["status" => "error", "message" => "ID is required"]);
+// Validate ID
+if ($id === null || !is_numeric($id)) {
+    echo json_encode(["status" => "error", "message" => "Valid ID is required"]);
     exit;
 }
 
 // Prepare and bind
 $stmt = $conn->prepare("DELETE FROM People WHERE id = ?");
 if ($stmt === false) {
-    echo json_encode(["status" => "error", "message" => "Statement preparation failed: " . $conn->error]);
+    // Log error for internal tracking
+    error_log("Statement preparation failed: " . $conn->error);
+    echo json_encode(["status" => "error", "message" => "Internal server error"]);
     exit;
 }
 
@@ -48,11 +51,15 @@ $stmt->bind_param("i", $id);
 if ($stmt->execute()) {
     if ($stmt->affected_rows > 0) {
         echo json_encode(["status" => "success", "message" => "Record deleted successfully"]);
+        // Log deletion for auditing
+        error_log("Record with ID $id deleted successfully.");
     } else {
         echo json_encode(["status" => "error", "message" => "No record found with the provided ID"]);
     }
 } else {
-    echo json_encode(["status" => "error", "message" => "Execution failed: " . $stmt->error]);
+    // Log error for internal tracking
+    error_log("Execution failed: " . $stmt->error);
+    echo json_encode(["status" => "error", "message" => "Internal server error"]);
 }
 
 // Close connections
