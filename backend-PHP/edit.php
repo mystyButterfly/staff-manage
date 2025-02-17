@@ -27,19 +27,28 @@ if ($conn->connect_error) {
 
 // Get data from POST request
 $data = json_decode(file_get_contents('php://input'), true);
+
+// Validate input
 if (!isset($data['id'], $data['name'], $data['age'], $data['occupation'], $data['city'])) {
     echo json_encode(["status" => "error", "message" => "Invalid input data"]);
     exit;
 }
 
-$id = $data['id']; // Unique ID of the person to be updated
-$name = $data['name'];
-$age = $data['age'];
-$occupation = $data['occupation'];
-$city = $data['city'];
+// Sanitize inputs
+$id = filter_var($data['id'], FILTER_SANITIZE_NUMBER_INT);
+$name = filter_var($data['name'], FILTER_SANITIZE_STRING);
+$age = filter_var($data['age'], FILTER_SANITIZE_NUMBER_INT);
+$occupation = filter_var($data['occupation'], FILTER_SANITIZE_STRING);
+$city = filter_var($data['city'], FILTER_SANITIZE_STRING);
 
 // Prepare and bind
 $stmt = $conn->prepare("UPDATE People SET name = ?, age = ?, occupation = ?, city = ? WHERE id = ?");
+if ($stmt === false) {
+    error_log("SQL prepare error: " . $conn->error); // Log the error instead of displaying it
+    echo json_encode(["status" => "error", "message" => "Database error."]);
+    exit;
+}
+
 $stmt->bind_param("sissi", $name, $age, $occupation, $city, $id);
 
 // Execute the statement
@@ -50,7 +59,8 @@ if ($stmt->execute()) {
         echo json_encode(["status" => "error", "message" => "No records updated. Check if the ID exists."]);
     }
 } else {
-    echo json_encode(["status" => "error", "message" => $stmt->error]);
+    error_log("SQL execute error: " . $stmt->error); // Log the error instead of displaying it
+    echo json_encode(["status" => "error", "message" => "Database error."]);
 }
 
 // Close connections
